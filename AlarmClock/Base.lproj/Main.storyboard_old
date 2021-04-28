@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alarm-clock" translatesAutoresizingMaskIntoConstraints="NO" id="Upk-WV-nlb">
+                                <rect key="frame" x="92" y="217" width="230" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="205" id="AXB-Oa-uFS"/>
+                                    <constraint firstAttribute="width" constant="230" id="aqJ-rl-2B2"/>
+                                </constraints>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4q2-fY-CX4">
+                                <rect key="frame" x="47" y="471" width="320" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="3Cy-Sa-VQV"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYp-Um-88s">
+                                <rect key="frame" x="176" y="666" width="62" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Começar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAlarm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k1c-C6-M3h"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="An3-RZ-eOi">
+                                <rect key="frame" x="193" y="524" width="28" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="Ry7-PI-pHc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="An3-RZ-eOi" secondAttribute="bottom" constant="313" id="Oyg-iJ-ILA"/>
+                            <constraint firstItem="Upk-WV-nlb" firstAttribute="centerX" secondItem="An3-RZ-eOi" secondAttribute="centerX" id="XgV-Pa-U1z"/>
+                            <constraint firstItem="Upk-WV-nlb" firstAttribute="centerX" secondItem="4q2-fY-CX4" secondAttribute="centerX" id="YaM-Qp-SXo"/>
+                            <constraint firstItem="Upk-WV-nlb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZhW-rt-3xm"/>
+                            <constraint firstItem="Upk-WV-nlb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="173" id="Zjt-pK-2is"/>
+                            <constraint firstItem="YYp-Um-88s" firstAttribute="top" secondItem="An3-RZ-eOi" secondAttribute="bottom" constant="83" id="bzc-ec-WR4"/>
+                            <constraint firstItem="An3-RZ-eOi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="193" id="lNN-cA-aHH"/>
+                            <constraint firstItem="4q2-fY-CX4" firstAttribute="top" secondItem="Upk-WV-nlb" secondAttribute="bottom" constant="49" id="sZH-TV-ewB"/>
+                            <constraint firstItem="Upk-WV-nlb" firstAttribute="centerX" secondItem="YYp-Um-88s" secondAttribute="centerX" id="uNe-gM-q20"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clock" destination="Upk-WV-nlb" id="CQt-c1-ww0"/>
+                        <outlet property="counter" destination="An3-RZ-eOi" id="umL-yL-Qvb"/>
+                        <outlet property="startButton" destination="YYp-Um-88s" id="8aQ-mB-Urz"/>
+                        <outlet property="timePicker" destination="4q2-fY-CX4" id="rnb-CW-De5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alarm-clock" width="1024" height="951"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="btm-DW-joC">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="TaS-e0-jm5">
+            <objects>
+                <viewController id="btm-DW-joC" userLabel="View Controller" customClass="ViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cbn-oK-Ewt">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alarm-clock" translatesAutoresizingMaskIntoConstraints="NO" id="qV2-G1-1ek" userLabel="Analog clock">
+                                <rect key="frame" x="47" y="106" width="334" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="205" id="LkY-SU-Z85"/>
+                                    <constraint firstAttribute="width" constant="320" id="pSJ-21-JeK"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pSJ-21-JeK"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="pSJ-21-JeK"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="243" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BI2-SJ-y9Z" userLabel="Counter">
+                                <rect key="frame" x="198" y="390" width="28" height="59"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwj-5f-bdF">
+                                <rect key="frame" x="74" y="350" width="280" height="139"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="upt-qw-CXF"/>
+                                </constraints>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="upt-qw-CXF"/>
+                                    </mask>
+                                </variation>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkQ-6r-Sma" userLabel="Comecar">
+                                <rect key="frame" x="47" y="576" width="334" height="40"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Começar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAlarm:" destination="btm-DW-joC" eventType="touchUpInside" id="xUS-mQ-mVC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IfR-ti-wjE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dkQ-6r-Sma" firstAttribute="width" secondItem="dwj-5f-bdF" secondAttribute="width" multiplier="0.2" id="0tR-9B-J9H">
+                                <variation key="widthClass=regular" constant="166"/>
+                            </constraint>
+                            <constraint firstItem="dkQ-6r-Sma" firstAttribute="top" secondItem="BI2-SJ-y9Z" secondAttribute="bottom" constant="127" id="2K9-Eo-hEe"/>
+                            <constraint firstItem="dwj-5f-bdF" firstAttribute="leading" secondItem="IfR-ti-wjE" secondAttribute="leading" constant="74" id="4S8-PP-boI"/>
+                            <constraint firstItem="dkQ-6r-Sma" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qV2-G1-1ek" secondAttribute="trailing" id="9pD-fa-kwq"/>
+                            <constraint firstItem="dkQ-6r-Sma" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qV2-G1-1ek" secondAttribute="leading" id="Fec-j8-xTr"/>
+                            <constraint firstItem="qV2-G1-1ek" firstAttribute="leading" secondItem="IfR-ti-wjE" secondAttribute="leading" constant="47" id="JU9-4Y-ebc"/>
+                            <constraint firstItem="BI2-SJ-y9Z" firstAttribute="top" secondItem="IfR-ti-wjE" secondAttribute="top" constant="170" id="QLL-Nt-qND"/>
+                            <constraint firstItem="IfR-ti-wjE" firstAttribute="trailing" secondItem="dwj-5f-bdF" secondAttribute="trailing" constant="72" id="RKA-Rg-KyM"/>
+                            <constraint firstItem="dkQ-6r-Sma" firstAttribute="top" secondItem="BI2-SJ-y9Z" secondAttribute="bottom" constant="56" id="Vy4-K2-wbg"/>
+                            <constraint firstItem="dwj-5f-bdF" firstAttribute="top" secondItem="qV2-G1-1ek" secondAttribute="bottom" constant="39" id="WKb-bg-Mmy"/>
+                            <constraint firstItem="dkQ-6r-Sma" firstAttribute="top" secondItem="dwj-5f-bdF" secondAttribute="bottom" constant="87" id="WXs-f3-k6m"/>
+                            <constraint firstItem="dkQ-6r-Sma" firstAttribute="top" secondItem="cbn-oK-Ewt" secondAttribute="top" constant="50" id="Zp3-rZ-CY4">
+                                <variation key="widthClass=regular" constant="287"/>
+                            </constraint>
+                            <constraint firstItem="qV2-G1-1ek" firstAttribute="top" secondItem="IfR-ti-wjE" secondAttribute="top" constant="62" id="a9e-nd-8Sf">
+                                <variation key="widthClass=regular" constant="94"/>
+                            </constraint>
+                            <constraint firstItem="dkQ-6r-Sma" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cbn-oK-Ewt" secondAttribute="leading" constant="453" id="duc-qH-rtN">
+                                <variation key="widthClass=regular" constant="20" symbolic="YES"/>
+                            </constraint>
+                            <constraint firstItem="IfR-ti-wjE" firstAttribute="trailing" secondItem="BI2-SJ-y9Z" secondAttribute="trailing" constant="200" id="ek2-BE-0hd"/>
+                            <constraint firstItem="dkQ-6r-Sma" firstAttribute="height" secondItem="dwj-5f-bdF" secondAttribute="height" multiplier="0.25" id="enJ-fN-bHr"/>
+                            <constraint firstItem="dwj-5f-bdF" firstAttribute="centerX" secondItem="dkQ-6r-Sma" secondAttribute="centerX" id="gve-b5-y5p"/>
+                            <constraint firstItem="dkQ-6r-Sma" firstAttribute="centerX" secondItem="BI2-SJ-y9Z" secondAttribute="centerX" constant="2" id="hx4-C9-8E7"/>
+                            <constraint firstAttribute="trailing" secondItem="dkQ-6r-Sma" secondAttribute="trailing" id="iEP-QV-cLF">
+                                <variation key="widthClass=regular" constant="166"/>
+                            </constraint>
+                            <constraint firstItem="dwj-5f-bdF" firstAttribute="centerX" secondItem="cbn-oK-Ewt" secondAttribute="centerX" id="ilS-bW-zKl"/>
+                            <constraint firstItem="dwj-5f-bdF" firstAttribute="centerY" secondItem="BI2-SJ-y9Z" secondAttribute="centerY" id="j8K-cA-Xh5"/>
+                            <constraint firstItem="IfR-ti-wjE" firstAttribute="bottom" secondItem="dkQ-6r-Sma" secondAttribute="bottom" constant="60" id="q1P-i7-alc"/>
+                            <constraint firstItem="dkQ-6r-Sma" firstAttribute="top" secondItem="dwj-5f-bdF" secondAttribute="bottom" constant="8" id="un9-aM-ncL"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RKA-Rg-KyM"/>
+                                <exclude reference="ek2-BE-0hd"/>
+                                <exclude reference="q1P-i7-alc"/>
+                                <exclude reference="QLL-Nt-qND"/>
+                                <exclude reference="0tR-9B-J9H"/>
+                                <exclude reference="Vy4-K2-wbg"/>
+                                <exclude reference="Zp3-rZ-CY4"/>
+                                <exclude reference="duc-qH-rtN"/>
+                                <exclude reference="enJ-fN-bHr"/>
+                                <exclude reference="iEP-QV-cLF"/>
+                                <exclude reference="un9-aM-ncL"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="RKA-Rg-KyM"/>
+                                <include reference="ek2-BE-0hd"/>
+                                <include reference="q1P-i7-alc"/>
+                                <exclude reference="4S8-PP-boI"/>
+                                <exclude reference="WKb-bg-Mmy"/>
+                                <exclude reference="gve-b5-y5p"/>
+                                <exclude reference="ilS-bW-zKl"/>
+                                <exclude reference="j8K-cA-Xh5"/>
+                                <include reference="QLL-Nt-qND"/>
+                                <include reference="0tR-9B-J9H"/>
+                                <exclude reference="2K9-Eo-hEe"/>
+                                <exclude reference="9pD-fa-kwq"/>
+                                <exclude reference="Fec-j8-xTr"/>
+                                <include reference="Vy4-K2-wbg"/>
+                                <exclude reference="WXs-f3-k6m"/>
+                                <include reference="Zp3-rZ-CY4"/>
+                                <include reference="duc-qH-rtN"/>
+                                <include reference="enJ-fN-bHr"/>
+                                <exclude reference="hx4-C9-8E7"/>
+                                <include reference="iEP-QV-cLF"/>
+                                <include reference="un9-aM-ncL"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="clock" destination="qV2-G1-1ek" id="o0I-Oy-8JL"/>
+                        <outlet property="counter" destination="BI2-SJ-y9Z" id="1mk-Gl-C5p"/>
+                        <outlet property="startButton" destination="dkQ-6r-Sma" id="A1A-Ah-tAJ"/>
+                        <outlet property="timePicker" destination="dwj-5f-bdF" id="1xH-k4-IcN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJB-ic-yDT" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.25" y="117.39130434782609"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alarm-clock" width="1024" height="951"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
